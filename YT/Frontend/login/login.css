@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: changeBackground 20s infinite;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('background.jpg'); }
+    33% { background-image: url('image2.jpg'); }
+    66% { background-image: url('image3.jpg'); }
+    100% { background-image: url('background.jpg'); }
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.textbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #5C6BC0;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #3949AB;
+}
+
+p {
+    margin-top: 20px;
+}
+
+a {
+    color: #5C6BC0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

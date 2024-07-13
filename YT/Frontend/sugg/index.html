@@ -1,0 +1,39 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Menu Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Subscribed Channel</a></li>
+                <li><a href="#">Watch History</a></li>
+                <li><a href="#">Change Password</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Main Content Area</h1>
+            <p>This is the main content area of your website.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

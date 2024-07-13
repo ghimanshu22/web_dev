@@ -1,0 +1,118 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Ensure header is above other content */
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    z-index: 3; /* Ensure menu icon is above both menu and content */
+}
+
+.menu-icon .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu {
+    position: absolute;
+    top: 50px; /* Adjust this value based on your design */
+    left: 30px; /* Adjust this value to increase distance between bars */
+    width: 200px;
+    background-color: #333;
+    transform: translateX(-120%); /* Start off-screen to the left */
+    transition: transform 0.3s ease-in-out; /* Add transition for transform */
+    z-index: -1; /* Ensure menu is behind header and content initially */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow for depth */
+    padding: 20px; /* Increased padding for better spacing */
+    opacity: 0; /* Initially hide the menu */
+    pointer-events: none; /* Initially disable pointer events */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+.menu.open {
+    transform: translateX(calc(-120% + 2.75in)); /* Shift to the right by approximately 2 inches */
+    z-index: 3; /* Ensure menu is above other content when open */
+    opacity: 1; /* Show the menu */
+    pointer-events: auto; /* Enable pointer events */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 12px 15px; /* Increased padding for better touch target */
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
